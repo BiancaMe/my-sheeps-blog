@@ -23,4 +23,12 @@ ActiveRecord::Schema[7.1].define(version: 0) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "photo"
+    t.text "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "posts_counter"
+  end
 end
