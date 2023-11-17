@@ -78,7 +78,7 @@ https://github.com/BiancaMe/my-sheeps-blog.git
 To setup this project, run this command:
 
 ```sh
-ruby main.rb
+rails server
 ```
 ### Prerequisites
 
