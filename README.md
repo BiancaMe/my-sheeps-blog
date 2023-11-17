@@ -4,9 +4,6 @@
 
  <!-- LOGO -->
 
-  <img src="./assets/catalogs.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
 <!-- MAIN HEADING -->
 
   <h3><b>My Sheeps Blog</b></h3>
