@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :likes
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   after_create :update_counter
-  after_delete :update_counter
+  after_destroy :update_counter
 
   def recents(limit = 5)
     comments.order(created_at: :desc).limit(limit)
