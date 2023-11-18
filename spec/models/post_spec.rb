@@ -46,7 +46,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Increment posts counter.' do
-    post2 = Post.new(author: user, title: 'Second Post', text: 'Welcome to my first post')
+    Post.new(author: user, title: 'Second Post', text: 'Welcome to my first post')
     expect(user.posts_counter).to eq(1)
   end
 
