@@ -5,7 +5,6 @@ class Post < ApplicationRecord
   after_create :increment_counter
   after_destroy :decrement_counter
 
-
   def recents(limit = 5)
     comments.order(created_at: :desc).limit(limit)
   end
