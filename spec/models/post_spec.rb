@@ -52,6 +52,7 @@ RSpec.describe Post, type: :model do
 
   it 'Decrement posts counter.' do
     post2 = Post.new(author: user, title: 'Second Post', text: 'Welcome to my first post')
+    expect(user.posts_counter).to eq(1)
     post2.destroy
     expect(user.posts_counter).to eq(0)
   end
