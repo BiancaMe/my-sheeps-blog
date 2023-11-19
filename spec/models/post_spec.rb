@@ -56,4 +56,14 @@ RSpec.describe Post, type: :model do
     post2.destroy
     expect(user.posts_counter).to eq(0)
   end
+
+  it 'Recent comments' do
+    comment1 = Comment.create(post:, user:, text: 'Good', created_at: 1.day.ago)
+    comment2 = Comment.create(post:, user:, text: 'Nice', created_at: 2.day.ago)
+    comment3 = Comment.create(post:, user:, text: 'Awesome', created_at: 3.day.ago)
+    comment4 = Comment.create(post:, user:, text: 'Like', created_at: 4.day.ago)
+    Comment.create(post:, user:, text: 'Love it', created_at: 5.day.ago)
+
+    expect(post.recents).to eq([comment, comment1, comment2, comment3, comment4])
+  end
 end
