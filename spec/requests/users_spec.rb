@@ -26,20 +26,20 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET #show' do
-  before do
-    get user_path(@user)
-  end
+    before do
+      get user_path(@user)
+    end
 
-  it 'renders status correct' do
-    expect(response).to have_http_status(:success)
-  end
+    it 'renders status correct' do
+      expect(response).to have_http_status(:success)
+    end
 
-  it 'renders the show template' do
-    expect(response).to render_template(:show)
-  end
+    it 'renders the show template' do
+      expect(response).to render_template(:show)
+    end
 
-  it 'response body includes correct placeholders text' do
-    expect(response.body).to include('Profile of User')
+    it 'response body includes correct placeholders text' do
+      expect(response.body).to include('Profile of User')
+    end
   end
-end
 end
