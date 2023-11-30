@@ -1,15 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  before(:all) do
+  before :each do
     @user = User.new(name: 'Bianca')
     @user.save
   end
 
   describe 'GET /index' do
-    before do
-      get users_path
-    end
+    before(:example) { get users_path }
 
     it 'response status correct' do
       expect(response.status).to eq(200)
