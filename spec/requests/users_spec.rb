@@ -25,7 +25,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET #show' do
+  describe 'GET /show' do
     before do
       get user_path(@user)
     end
