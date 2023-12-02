@@ -8,7 +8,7 @@
             </div>
         </div>
         <p><%= @post.text %></p>
-        <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.author_id}/likes" do |form| %>
+        <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/likes" do |form| %>
         <%= form.submit 'Like' %>
       <%end%>
     </div>   
