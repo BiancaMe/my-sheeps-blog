@@ -1,1 +1,18 @@
-<h1>Post selected Info</h1>
+<section class='post'>
+    <div>
+        <div>
+            <h2><%= @post.title %><span>by <%= @post.author.name %></span></h2>
+            <div>
+                <span>Comments: <%= @post.comments_counter || 0 %> </span>
+                <span> Likes: <%= @post.likes_counter || 0 %></span>
+            </div>
+        </div>
+        <p><%= @post.text %></p>
+    </div>   
+    <div>
+        <p> <%= 'There is no comment yet' if @post.comments.length === 0 %></p>
+        <% @post.recents.each do |comment| %>
+          <p><%= comment.user.name %>: <%= comment.text %></p>
+        <% end %>
+    </div>
+</section>

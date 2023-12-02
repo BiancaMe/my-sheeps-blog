@@ -1,1 +1,43 @@
 <h1>Posts</h1>
+
+<section >
+  <div>
+    <img src="<%= @user.photo %>" />
+  </div>
+  <div >
+    <div><%= @user.name %></div>
+  </div>
+  <div >
+    <div>Number of posts: <%= @user.posts_counter || 0 %></div>
+  </div>
+
+  <ul>
+  <% @user.recents.each do |post| %>
+    <li> 
+    <%= link_to user_post_path(@user.id, post.id) do %>
+      <div>
+        <h2><%= post.title %></h2>
+        <% end %>
+        <p><%= post.text %></p>
+        <div>
+          <span>Comments: <%= post.comments_counter || 0 %> </span>
+          <span> Likes: <%= post.likes_counter || 0 %></span>
+        </div>
+      </div>   
+      <div>
+        <p> <%= 'There is no comment yet' if post.comments.length === 0 %></p>
+        <% post.recents.each do |comment| %>
+          <p><%= comment.user.name %>: <%= comment.text %></p>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <div>
+  <%= link_to user_posts_path(@user.id) do %>
+   Pagination
+  <% end %>
+  </div>
+
+  </div>
+</div>
