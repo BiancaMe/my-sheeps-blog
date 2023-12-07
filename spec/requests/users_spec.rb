@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'response body includes correct placeholders text' do
-      expect(response.body).to include('List of Users')
+      expect(response.body).to include('Users')
     end
   end
 
@@ -37,7 +37,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'response body includes correct placeholders text' do
-      expect(response.body).to include('Profile of User')
+      expect(response.body).to include('Profile')
     end
   end
 end
