@@ -1,0 +1,5 @@
+<div >
+  <% if can? :destroy, comment %>
+    <%= render partial: 'posts/delete', locals: { model: comment, url: user_post_comment_path(post.author, post, comment) } %>   
+  <% end %>
+</div>

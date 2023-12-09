@@ -11,6 +11,9 @@
         <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/likes" do |form| %>
         <%= form.submit 'Like' %>
       <%end%>
+      <% if can? :destroy, @post %>
+          <%= render partial: 'posts/delete', locals: { model: @post, url: user_post_path(@user, @post) } %>   
+        <% end %>
     </div>   
     <div class="comments">
         <p> <%= 'There is no comment yet' if @post.comments.length === 0 %></p>
