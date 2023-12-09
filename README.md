@@ -78,7 +78,7 @@ https://github.com/BiancaMe/my-sheeps-blog.git
 To setup this project, run this command:
 
 ```sh
-rails server
+bundle install
 ```
 ### Prerequisites
 
@@ -93,7 +93,7 @@ rails server
 To run the project, execute the following command:
 
 ```sh
-ruby main.rb
+rails s
 ```
 ### Run tests
 To test the project, execute the following command:
