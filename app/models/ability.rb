@@ -28,5 +28,14 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+    def initialize(user)
+      return unless user.present?
+      can :read, Post
+      can :manage, Post, author_id: user.id 
+      can :manage, Comment, author_id_id: user.id
+      return unless user.admin?
+      can :manage, :all
+    end
   end
 end
